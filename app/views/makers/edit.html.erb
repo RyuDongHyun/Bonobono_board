@@ -1,0 +1,14 @@
+<h1>수정화면</h1>
+<%= form_tag(maker_path(@maker), method: :put) do%>
+    <%= label_tag(:name, "작가 : ") %>
+    <%= text_field_tag(:name, @maker.name) %></br>
+    
+    <%= label_tag(:phone_number, "전화번호 : ")%>
+    <%= text_field_tag(:phone_number, @maker.phone_number) %></br>
+    
+    <%= label_tag(:email, "이메일 : ")%>
+    <%= text_field_tag(:email, @maker.email) %></br>
+    
+    <%= submit_tag("수정")%></br>
+<%end%>
+

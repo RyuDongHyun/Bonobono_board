@@ -1,0 +1,14 @@
+<p><%= flash[:msg]%></p>
+<h1>등록화면</h1>
+<%= form_tag "/makers", method: :post do%>
+    <%= label_tag(:name, "작가 : ") %>
+    <%= text_field_tag(:name) %></br>
+    
+    <%= label_tag(:phone_number, "전화번호 : ")%>
+    <%= text_field_tag(:phone_number) %></br>
+    
+    <%= label_tag(:email, "이메일 : ")%>
+    <%= email_field_tag(:email) %></br>
+    
+    <%= submit_tag("작가추가")%></br>
+<%end%>

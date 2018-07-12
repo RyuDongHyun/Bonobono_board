@@ -1,0 +1,18 @@
+<h1>수정화면</h1>
+
+<%= form_tag(work_path(@work), method: :put) do%>
+    <%= label_tag :title , '작품명 : '%>
+    <%= text_field_tag(:title, @work.title)%></br>
+    
+    <%= label_tag :desc , '작품설명 : '%>
+    <%= text_field_tag(:desc, @work.desc)%></br>
+    
+    <%= label_tag :image , '이미지_url : '%>
+    <%= text_field_tag(:image, @work.image)%></br>
+    
+    <%= label_tag :maker_id , '메이커_id : '%>
+    <%= text_field_tag(:maker_id, @work.maker_id)%></br>
+    
+    <%= submit_tag("수정하기")%>
+    
+<% end%>

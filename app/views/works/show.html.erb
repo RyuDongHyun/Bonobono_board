@@ -1,0 +1,7 @@
+<h1>작품명 : <%= @work.title%></h1>
+<img width="500", height="500" src="<%= @work.image%>"/>
+<p>설명 :<%= @work.desc%></p>
+<p>메이커 : <%= @work.maker.name%></p>
+
+
+<%= link_to "뒤로가기" , works_path%>

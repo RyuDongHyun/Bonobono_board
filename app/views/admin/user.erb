@@ -1,0 +1,23 @@
+<h1>회원정보</h1>
+
+<table>
+    <tr>
+        <th>이메일</th>
+        <th>등급</th>
+        <th></th>
+        <th>로그인 횟수</th>
+        <th>로그인 시간</th>
+        <th>로그인 ip</th>
+    </tr>
+    <% @users.reverse.each do |user|%>
+    <tr>
+        <td><%= user.email%></td>
+        <td><%= user.is_admin? ? "관리자" : "일반회원"%></td>
+        <td><%= link_to "역할바꾸기", "/admin/users/#{user.id}/change", data: {confirm: "진짜로?"} %></td>
+        
+        <td><%= user.sign_in_count %></td>
+        <td><%= user.current_sign_in_at %></td>
+        <td><%= user.last_sign_in_ip %></td>
+    </tr>
+    <%end%>
+</table>

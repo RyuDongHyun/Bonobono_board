@@ -1,0 +1,20 @@
+<h1>가입명단</h1>
+<table>
+    <tr>
+        <th>작가명</th>
+        <th>전화번호</th>
+        <th>이메일</th>
+    </tr>
+    <% @makers.each do |m|%>
+    <tr>
+        <td><%= m.name%></td>
+        <td><%= m.phone_number%></td>
+        <td><%= m.email%></td>
+        <td>
+            <%= link_to "상세히", maker_path(m)%>
+            <%= link_to "수정", edit_maker_path(m)%>
+            <%= link_to "삭제", maker_path(m), method: :delete, data: {confirm: "정말 삭제?"}%>
+        </td>
+    </tr>
+    <% end%>
+</table>

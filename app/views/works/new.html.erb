@@ -1,0 +1,25 @@
+<p><%= flash[:msg]%></p>
+<h1>새 작품 업로드</h1>
+
+<%= form_tag("/works", multipart: true) do%>
+    <%= label_tag :title , '작품명 : '%>
+    <%= text_field_tag(:title)%></br>
+    
+    <%= label_tag :desc , '작품설명 : '%>
+    <%= text_field_tag(:desc)%></br>
+    
+    <%= label_tag :image , '이미지_url : '%>
+    <%= file_field_tag(:image)%></br>
+    
+    <%= label_tag :maker_id , '메이커_id : '%>
+
+    <select name="maker_id">
+        <% @makers.each do |maker|%>
+          <option value="<%= maker.id%>"><%= maker.name%></option>
+        <% end%>
+    </select>
+    
+    <%= submit_tag("작품 올리기")%>
+    
+<% end%>
+
